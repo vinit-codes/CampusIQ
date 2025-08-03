@@ -1,69 +1,77 @@
-# React + TypeScript + Vite
+# CampusIQ
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React + TypeScript web application for campus management, featuring authentication, dashboards, and academic/finance modules.
 
-Currently, two official plugins are available:
+## Features
+- Student login and registration
+- Dashboard and portal pages
+- Profile management
+- Academic and finance management modules
+- Responsive UI with custom components (Button, Input, Header)
+- Routing via `react-router-dom`
+- Modular code structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Project Structure
+```
+frontend/
+  src/
+    App.tsx            # Main app component with routing
+    main.tsx           # Entry point
+    Router.tsx         # Route definitions
+    index.css          # Global styles
+    Components/
+      Common/
+        Button.tsx     # Reusable button component
+        Input.tsx      # Reusable input component
+        Header.tsx     # Header/navigation bar
+    Pages/
+      Login.tsx        # Login page
+      ...              # Other pages (Dashboard, Register, etc.)
+  public/
+    ...                # Static assets
+backend/
+  ...                  # Backend server (Node.js/Express)
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
+- Node.js (v18 or higher recommended)
+- npm
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Installation
+1. Clone the repository:
+   ```sh
+   git clone <repo-url>
+   cd CampusIQ/frontend
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+
+### Running the App
+Start the development server:
+```sh
+npm run dev
 ```
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Building for Production
+```sh
+npm run build
+```
+
+## Styling
+- All global and component styles are in `src/index.css` and `src/App.css`.
+- Tailwind CSS utility classes are used for rapid UI development.
+
+## Routing
+- All routes are defined in `src/Router.tsx` using `react-router-dom`.
+- Main navigation and conditional header rendering are handled in `App.tsx`.
+
+## Contributing
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+MIT
