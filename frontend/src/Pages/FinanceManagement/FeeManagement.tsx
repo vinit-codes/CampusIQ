@@ -1,9 +1,9 @@
 import React from 'react'
 
-const FeeManagement = () => {
+const Fees: React.FC = () => {
   return (
     <div>FeeManagement</div>
   )
 }
 
-export default FeeManagement
+export default Fees

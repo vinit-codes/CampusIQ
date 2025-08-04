@@ -1,9 +1,9 @@
 import React from 'react'
 
-const GradesTrackers = () => {
+const Results: React.FC = () => {
   return (
     <div>GradesTrackers</div>
   )
 }
 
-export default GradesTrackers
+export default Results

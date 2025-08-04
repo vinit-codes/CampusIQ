@@ -13,11 +13,11 @@ const AppWrapper: React.FC = () => {
 
 const App: React.FC = () => {
   const location = useLocation();
-  const showHeaderPaths = ["/Dashboard", "/Portal", "/Profile"];
+  const showHeaderPaths = ["/Dashboard", "/Portal", "/Profile" , "/Results", "/Fees", "/Hostel", "/Library"];
   const shouldShowHeader = showHeaderPaths.includes(location.pathname);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen w-screen">
       {shouldShowHeader && <Header />}
       <AppRouter />
     </div>

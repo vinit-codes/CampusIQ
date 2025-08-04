@@ -1,9 +1,9 @@
 import React from 'react'
 
-const HostelManagement = () => {
+const Hostel: React.FC = () => {
   return (
     <div>HostelManagement</div>
   )
 }
 
-export default HostelManagement
+export default Hostel

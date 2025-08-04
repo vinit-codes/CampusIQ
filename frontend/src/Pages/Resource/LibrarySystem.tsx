@@ -1,9 +1,9 @@
 import React from 'react'
 
-const LibrarySystem = () => {
+const Library: React.FC = () => {
   return (
     <div>LibrarySystem</div>
   )
 }
 
-export default LibrarySystem
+export default Library

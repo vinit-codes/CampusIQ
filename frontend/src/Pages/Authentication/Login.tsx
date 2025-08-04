@@ -35,7 +35,7 @@ const Login: React.FC = () => {
             />
             <div className="flex justify-between items-center">
               <a 
-                href="/Register" 
+                href="/ForgotPassword" 
                 className="text-blue-500 hover:underline text-lg lg:text-xl transition-all duration-300 hover:text-blue-700"
               >Forgot Password?</a>
               <Button clickFun="/Dashboard" nameButton="Login"/>
