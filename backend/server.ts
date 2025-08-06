@@ -4,6 +4,10 @@ import dotenv from 'dotenv';
 import './models/Student';
 import './models/Teacher';
 import './models/Admin';
+import "./models/Fee";
+import "./models/Assignment";
+import "./models/Attendance";
+
 
 
 dotenv.config();
