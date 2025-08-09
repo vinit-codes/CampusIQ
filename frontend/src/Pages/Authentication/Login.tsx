@@ -1,9 +1,10 @@
 
 import React from "react";
-import Input from './../Components/Common/Input';
-import Button from "./../Components/Common/Button";
+import Button from './../../Components/Common/Button.tsx';
+import Input from './../../Components/Common/Input.tsx';
 
 const Login: React.FC = () => {
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#EAE4D5] p-4">
       <div className="flex flex-col lg:flex-row bg-[#F2F2F2] rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 w-full max-w-6xl h-auto lg:h-[80vh] overflow-hidden hover:border-2 hover:border-gray-300">
@@ -39,7 +40,7 @@ const Login: React.FC = () => {
                 href="/Register" 
                 className="text-blue-500 hover:underline text-lg lg:text-xl transition-all duration-300 hover:text-blue-700"
               >Forgot Password?</a>
-              <Button clickFun="/Dashboard" nameButton="Login"/>
+              <Button clickFun="/Dashboard" nameButton="LogIn"/>
             </div>
           </form>
           <div className="text-center mb-6">
