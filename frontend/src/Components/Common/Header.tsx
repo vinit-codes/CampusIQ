@@ -15,6 +15,7 @@ const pageNamesMap: Record<string, string> = {
   "/studentsprofile": "Repository",
   "/hostel": "Hostel",
   "/library": "Library",
+  "/Results": "Results",
 };
 
 const Header: React.FC<HeaderProps> = ({ StudentName = "- Yui Hoshizora" }) => {
@@ -37,7 +38,7 @@ const Header: React.FC<HeaderProps> = ({ StudentName = "- Yui Hoshizora" }) => {
           alt="Logo"
           className="h-12 w-12 rounded-full object-cover"
         />
-        <h1 className="font-LibertinusSans text-4xl font-bold text-blue-500 select-none whitespace-nowrap w-80">
+        <h1 className="font-LibertinusSans text-4xl font-bold text-black select-none whitespace-nowrap w-80">
           <TypingText text={pageName} />
         </h1>
       </div>

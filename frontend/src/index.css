@@ -24,3 +24,8 @@
 .animate-fadeIn {
   animation: fadeIn 0.8s ease forwards;
 }
+
+/* Rotate chevron when details open */
+details[open] > summary .chevron {
+  transform: rotate(180deg);
+}
