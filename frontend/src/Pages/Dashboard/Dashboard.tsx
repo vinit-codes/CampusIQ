@@ -1,19 +1,21 @@
-import React from 'react' ;
+import React from 'react';
 import Header from './../../Components/Common/Header.tsx';
 import Sidebar from './../../Components/Common/Sidebar.tsx';
 
 const Dashboard = () => {
   return (
-    <div className="min-h-screen flex flex-col box-border m-0 p-0">
+    <div className="min-h-screen flex flex-col bg-gray-50 text-gray-800">
       <Header />
-      <div className="flex w-full m-0 p-0 pt-[72px] relative">
+      <div className="flex w-full pt-16 relative">
         <Sidebar />
-        <div className="flex justify-center align-center text-center w-full h-[2000px] ">
-          <h1 className="text-2xl font-bold text-center">Welcome to the Dashboard</h1>
-        </div>
+        <main className="flex-1 flex justify-center items-center text-center px-8 py-12 animate-fadeIn">
+          <h1 className="text-4xl font-extrabold">
+            Welcome to the Dashboard
+          </h1>
+        </main>
       </div>
     </div>
   );
 };
 
-export default Dashboard
+export default Dashboard;

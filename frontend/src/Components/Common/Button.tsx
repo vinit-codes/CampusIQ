@@ -13,7 +13,7 @@ const Button: React.FC<ButtonProps> = ({ clickFun, nameButton }) => {
       onClick={() => {
         navigate(clickFun);
       }}
-      className="bg-black text-gray-100 border-none px-4 py-2 rounded cursor-pointer transition duration-200 hover:scale-105 hover:animate-bounce"
+      className="bg-[#0046FF] text-[#E9E9E9] border-none px-4 py-2 rounded cursor-pointer transition duration-200 hover:scale-105 hover:animate-bounce"
     >
       {nameButton}
     </button>

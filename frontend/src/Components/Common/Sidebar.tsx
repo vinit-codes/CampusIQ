@@ -1,39 +1,34 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome,faInbox  , faGraduationCap , faBuilding , faBook , faDatabase} from '@fortawesome/free-solid-svg-icons';
-import { library } from '@fortawesome/fontawesome-svg-core';
+import { HugeiconsIcon } from '@hugeicons/react';
+import { DashboardSquare02Icon, InboxDownloadIcon, Hotel01Icon, RepositoryIcon, TeacherIcon, LibrariesIcon } from '@hugeicons/core-free-icons';
 
+const links = [
+  { href: '/dashboard', icon: DashboardSquare02Icon, label: 'Dashboard' },
+  { href: '/notifications', icon: InboxDownloadIcon, label: 'Inbox' },
+  { href: '/academics', icon: TeacherIcon, label: 'Academics' },
+  { href: '/studentsprofile', icon: RepositoryIcon, label: 'Repository' },
+  { href: '/hostel', icon: Hotel01Icon, label: 'Hostel' },
+  { href: '/library', icon: LibrariesIcon, label: 'Library' },
+];
 
-library.add(faInbox, faGraduationCap, faDatabase, faBuilding, faHome , faBook);
 const Sidebar = () => {
   return (
-    <aside className="w-1/6 h-screen bg-[#EAE4D5] m-0 p-4 shadow-lg fixed flex flex-col mt-[2px] rounded-[5px]">
-        <a href="/dashboard" className="p-3  m-2 item-center rounded-[2px] text-2xl ">
-          <FontAwesomeIcon icon={faHome} className="mr-2" />Dashboard
+    <aside className="w-60 h-screen bg-white shadow-lg fixed flex flex-col rounded-lg border border-gray-200 p-6">
+      {links.map(({ href, icon, label }) => (
+        <a
+          key={label}
+          href={href}
+          className="group flex items-center gap-3 mb-5 text-gray-700 text-base font-medium rounded-md px-4 py-3 transition-all duration-300 hover:bg-blue-100 hover:text-blue-700 hover:shadow-md cursor-pointer"
+        >
+          <HugeiconsIcon
+            icon={icon}
+            className="w-6 h-6 text-blue-500 group-hover:text-blue-700 transition-transform duration-300 ease-in-out group-hover:translate-x-1"
+          />
+          <span className="whitespace-nowrap">{label}</span>
         </a>
-
-        <a href="/notifications" className="p-3  m-2 item-center rounded-[2px] text-2xl ">
-          <FontAwesomeIcon icon={faInbox} className="mr-2" /> Inbox
-        </a>
-
-        <a href="/academics" className="p-3  m-2 item-center rounded-[2px] text-2xl">
-          <FontAwesomeIcon icon={faGraduationCap} className="mr-2" />Academics
-        </a>
-
-        <a href="/studentsprofile" className="p-3  m-2 item-center rounded-[2px] text-2xl">
-          <FontAwesomeIcon icon={faDatabase} className="mr-2" />Repository
-        </a>
-
-        <a href="/hostel" className="p-3  m-2 item-center rounded-[2px] text-2xl">
-          <FontAwesomeIcon icon={faBuilding} className="mr-2" />Hostel
-        </a>
-
-        <a href="/library" className="p-3  m-2 item-center rounded-[2px] text-2xl">
-          <FontAwesomeIcon icon={faBook} className="mr-2" />Library
-        </a>
-
+      ))}
     </aside>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;
