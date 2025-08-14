@@ -4,16 +4,19 @@ import { useNavigate } from "react-router-dom";
 interface ButtonProps {
   clickFun: string;
   nameButton: string;
+  className?: string;
+  type?: "button" | "submit" | "reset";
 }
 
-const Button: React.FC<ButtonProps> = ({ clickFun, nameButton }) => {
+const Button: React.FC<ButtonProps> = ({ clickFun, nameButton ,type}) => {
   const navigate = useNavigate();
+
   return (
     <button
-      onClick={() => {
-        navigate(clickFun);
-      }}
-      className="bg-[#0046FF] text-[#E9E9E9] border-none px-4 py-2 rounded cursor-pointer transition duration-200 hover:scale-105 hover:animate-bounce"
+      type={type}
+      onClick={() => navigate(clickFun)}
+      aria-label={nameButton}
+      className="bg-[#2563EB] hover:bg-[#0EA5E9] text-white px-4 py-2 rounded-lg border-none cursor-pointer transition-transform duration-150 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 ${className}"
     >
       {nameButton}
     </button>
