@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 import TypingText from "./TypingText";
 import Input from "./Input";
@@ -38,9 +38,10 @@ const Header: React.FC<HeaderProps> = ({ StudentName = "- Yui Hoshizora" }) => {
     const input = form.querySelector('input[name="header-search"]') as HTMLInputElement | null;
     if (input) {
       console.log("Search query:", input.value);
-      // navigate(`/search?q=${encodeURIComponent(input.value)}`)
+      navigate(`/search?q=${encodeURIComponent(input.value)}`)
     }
   };
+  const [isLoggedIn , setIsLoggedIn] = useState(true);
 
   return (
     <nav
@@ -82,6 +83,15 @@ const Header: React.FC<HeaderProps> = ({ StudentName = "- Yui Hoshizora" }) => {
             {StudentName}
           </span>
         </Link>
+
+        {/* Login/logout button */}
+        {isLoggedIn ? <button onClick={() => {setIsLoggedIn(false);
+          navigate("/")}
+        } className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition-colors text-sm md:text-base">
+          Logout
+        </button> : <button onClick={() => setIsLoggedIn(true)} className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 transition-colors text-sm md:text-base">
+          Login
+        </button>}
 
         {/* Mobile: simple menu button (expand later) */}
         <button

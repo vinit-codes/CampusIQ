@@ -1,4 +1,3 @@
-import React from 'react';
 import Header from './../../Components/Common/Header.tsx';
 import Sidebar from './../../Components/Common/Sidebar.tsx';
 import facultyImg from '../../assets/Images/faculty.png';
