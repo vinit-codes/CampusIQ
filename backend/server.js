@@ -1,10 +1,9 @@
-import express from 'express';
-import connectDB from './config/db';
-import dotenv from 'dotenv';
-import './models/Student';
-import './models/Teacher';
-import './models/Admin';
-
+const express = require('express');
+const connectDB = require('./config/db');
+const dotenv = require('dotenv');
+require('./models/Student');
+require('./models/Teacher');
+require('./models/Admin');
 
 dotenv.config();
 
