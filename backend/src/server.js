@@ -6,6 +6,7 @@ import morgan from 'morgan';
 import { notFound, onError } from './middleware/errors.js';
 import { authRequired, tenantFromHeader } from "./middleware/auth.js";
 import Admin from "./models/Admin.js";
+import { createCollegeWithAdmin } from "./services/college.service.js";
 
 const app = express();
 //testing
@@ -28,6 +29,21 @@ app.post("/test-create-admin", async (req, res) => {
   }
 });
 
+app.post("/test-create-college", async (req, res) => {
+  try {
+    const result = await createCollegeWithAdmin({
+      name: "Indian Web Engg College",
+      code: "IWE",
+      adminName: "Vineeth",
+      adminEmail: "vineeth@iwe.edu",
+      adminPassword: "admin123"
+    });
+    res.json(result);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 
 // Middleware
 app.use(helmet());
@@ -40,10 +56,17 @@ app.get('/health', (_req, res) => {
   res.status(200).json({ status: 'ok' });
 });
 
-// Route placeholders
-app.use('/api/auth', (req, res) => res.status(501).json({ message: 'Not implemented' }));
-app.use('/api/students', (req, res) => res.status(501).json({ message: 'Not implemented' }));
-app.use('/api/teachers', (req, res) => res.status(501).json({ message: 'Not implemented' }));
+// Routes
+import collegeRoutes from "./routes/college.routes.js";
+import authRoutes from "./routes/auth.routes.js";
+import teacherRoutes from "./routes/teacher.routes.js";
+import studentRoutes from "./routes/student.routes.js";
+
+app.use("/api/colleges", collegeRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/teachers", teacherRoutes);
+app.use("/api/students", studentRoutes);
+
 
 // Error handling
 app.use(notFound);
